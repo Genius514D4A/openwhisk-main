@@ -1,3 +1,4 @@
+sudo apt-get update
 
 # Set up the repository
 sudo apt-get install --assume-yes ca-certificates curl gnupg lsb-release
