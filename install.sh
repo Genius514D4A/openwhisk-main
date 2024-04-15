@@ -1,5 +1,5 @@
 sudo apt-get update
-#111
+
 # Set up the repository
 sudo apt-get install --assume-yes ca-certificates curl gnupg lsb-release
 sudo mkdir -p /etc/apt/keyrings
@@ -10,7 +10,7 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.
 sudo apt-get update
 sudo apt-get install --assume-yes docker-ce docker-ce-cli containerd.io docker-compose-plugin
 #sudo docker --version
-sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+sudo curl -L https://github.com/docker/compose/releases/download/v2.26.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 sudo groupadd docker
@@ -29,7 +29,7 @@ sudo make -C ~/openwhisk-devtools/docker-compose/ quick-start
 # Install Java & Download JMeter
 sudo apt update
 sudo apt install openjdk-11-jdk --assume-yes
-sudo wget https://downloads.apache.org/jmeter/binaries/apache-jmeter-5.4.3.zip
+sudo wget https://downloads.apache.org/jmeter/binaries/apache-jmeter-5.6.3.zip
 
 # Install OpenWhisk CLI
 sudo cp ~/openwhisk/wsk /usr/bin
