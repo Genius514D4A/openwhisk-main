@@ -20,9 +20,9 @@ sudo usermod -aG docker $USER
 # Install OpenWhisk
 sudo git clone https://github.com/apache/openwhisk-devtools.git
 sudo apt --assume-yes install make npm zip unzip python-pip 
-sudo unlink /etc/resolv.conf
-sudo cp ~/openwhisk/resolv.conf /etc/resolv.conf
-sudo chmod 444 /etc/resolv.conf
+#sudo unlink /etc/resolv.conf
+#sudo cp ~/openwhisk/resolv.conf /etc/resolv.conf
+#sudo chmod 444 /etc/resolv.conf
 sudo cp ~/openwhisk/Makefile ~/openwhisk-devtools/docker-compose/Makefile
 sudo make -C ~/openwhisk-devtools/docker-compose/ quick-start
 
