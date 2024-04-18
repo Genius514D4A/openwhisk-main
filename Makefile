@@ -176,7 +176,7 @@ download-cli:
         unzip -o wsk.zip; \
         elif [ "$(UNAME_STR)" = "Linux" ]; then \
           echo "downloading cli for linux" ; \
-          curl -s -o $(OPENWHISK_PROJECT_HOME)/bin/wsk.tgz -L https://github.com/apache/openwhisk-cli/releases/download/$(WSK_CLI_VERSION)/OpenWhisk_CLI-$(WSK_CLI_VERSION)-linux-amd64.tgz ; \
+          curl -s -o $(OPENWHISK_PROJECT_HOME)/bin/wsk.tgz -L https://github.com/apache/openwhisk-cli/releases/download/1.2.0/OpenWhisk_CLI-1.2.0-linux-amd64.tgz ; \
             cd $(OPENWHISK_PROJECT_HOME)/bin ; \
             tar -xf wsk.tgz ; \
         fi; \
