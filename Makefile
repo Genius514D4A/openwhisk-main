@@ -150,13 +150,17 @@ docker-pull-full:
 	docker pull $(DOCKER_IMAGE_PREFIX)/action-nodejs-v8:${DOCKER_IMAGE_TAG}
 	docker pull $(DOCKER_IMAGE_PREFIX)/action-nodejs-v10:${DOCKER_IMAGE_TAG}
 	docker pull $(DOCKER_IMAGE_PREFIX)/action-nodejs-v12:${DOCKER_IMAGE_TAG}
+	docker pull $(DOCKER_IMAGE_PREFIX)/action-nodejs-v14:${DOCKER_IMAGE_TAG}
 	docker pull $(DOCKER_IMAGE_PREFIX)/python2action:${DOCKER_IMAGE_TAG}
 	docker pull $(DOCKER_IMAGE_PREFIX)/python3action:${DOCKER_IMAGE_TAG}
 	docker pull $(DOCKER_IMAGE_PREFIX)/action-swift-v4.2:${DOCKER_IMAGE_TAG}
 	docker pull $(DOCKER_IMAGE_PREFIX)/action-swift-v5.1:${DOCKER_IMAGE_TAG}
+	docker pull $(DOCKER_IMAGE_PREFIX)/action-swift-v5.3:${DOCKER_IMAGE_TAG}
+	docker pull $(DOCKER_IMAGE_PREFIX)/action-swift-v5.4:${DOCKER_IMAGE_TAG}
 	docker pull $(DOCKER_IMAGE_PREFIX)/java8action:${DOCKER_IMAGE_TAG}
 	docker pull $(DOCKER_IMAGE_PREFIX)/action-php-v7.3:${DOCKER_IMAGE_TAG}
 	docker pull $(DOCKER_IMAGE_PREFIX)/action-php-v7.4:${DOCKER_IMAGE_TAG}
+	docker pull $(DOCKER_IMAGE_PREFIX)/action-php-v8.0:${DOCKER_IMAGE_TAG}
 	docker pull $(DOCKER_IMAGE_PREFIX)/action-ruby-v2.5:${DOCKER_IMAGE_TAG}
 	docker pull $(DOCKER_IMAGE_PREFIX)/action-golang-v1.11:${DOCKER_IMAGE_TAG}
 	docker pull $(DOCKER_IMAGE_PREFIX)/dockerskeleton:${DOCKER_IMAGE_TAG}
@@ -176,7 +180,7 @@ download-cli:
         unzip -o wsk.zip; \
         elif [ "$(UNAME_STR)" = "Linux" ]; then \
           echo "downloading cli for linux" ; \
-          curl -s -o $(OPENWHISK_PROJECT_HOME)/bin/wsk.tgz -L https://github.com/apache/openwhisk-cli/releases/download/1.2.0/OpenWhisk_CLI-1.2.0-linux-amd64.tgz ; \
+          curl -s -o $(OPENWHISK_PROJECT_HOME)/bin/wsk.tgz -L https://github.com/apache/openwhisk-cli/releases/download/$(WSK_CLI_VERSION)/OpenWhisk_CLI-$(WSK_CLI_VERSION)-linux-amd64.tgz ; \
             cd $(OPENWHISK_PROJECT_HOME)/bin ; \
             tar -xf wsk.tgz ; \
         fi; \
